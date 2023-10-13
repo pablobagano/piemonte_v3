@@ -11,8 +11,16 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import pymysql
 import os
+from django.db import DatabaseError, connections
+from azure.identity import DefaultAzureCredential
+from azure.storage.blob import BlobClient
+import tempfile
 
+pymysql.install_as_MySQLdb()
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,10 +29,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3pw)ev1*+8@=5zezbu$#$nho)b=i-sm5+y@p!y4o1av2ca%mp%'
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.getenv('DJANGO_ENV') == 'production':
+    DEBUG = False
+else:
+    DEBUG = True
+    print(f"DEBUG: {DEBUG}")
 
 ALLOWED_HOSTS = []
 
@@ -38,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'piemonte.apps.PiemonteConfig'
 ]
 
 MIDDLEWARE = [
@@ -74,13 +87,53 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
+
+CERT_PATH = '/Users/pablobagano/Desktop/piemonte_v3/DigiCertGlobalRootCA.crt.pem'
+
+try:
+    conn_string_db = str(os.getenv('CONN_STRING_DB'))
+    blob_url = str(os.getenv('BLOB_URL'))
+    blob_client = BlobClient.from_connection_string(
+        conn_string_db,
+        container_name='stuffdb',
+        blob_name= 'DigiCertGlobalRootCA.crt.pem'
+        )
+    blob_stream = blob_client.download_blob()
+    blob_data = blob_stream.readall()
+except Exception as e:
+    print(f"{type(e).__name__}: {e}")
+try:
+    temp_cert_file = tempfile.NamedTemporaryFile(delete=False)
+    temp_cert_file.write(blob_data)
+    temp_cert_path = temp_cert_file.name
+    temp_cert_file.close()
+    print(f"Blob data successfully fetched and written to {temp_cert_path}")
+except Exception as e:
+    print(f"{type(e).__name__} : {e}")
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': str(os.getenv('DB_NAME')),
+        'USER': str(os.getenv('DB_USER')), 
+        'PASSWORD': str(os.getenv('DB_PASSWORD')),
+        'HOST': str(os.getenv('DB_HOST')),
+        'PORT': '3306',
+        'OPTIONS' : {
+            'ssl':{
+            'ca': temp_cert_path
+            }
+        }
     }
 }
-
+try:
+    connections['default'].ensure_connection()
+    print("All good")
+except DatabaseError as db_err:
+    print(f"DatabaseError: {db_err}")
+except Exception as e:
+    print(f"{type(e).__name__}: {e}")
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -117,6 +170,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'setup/static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 
