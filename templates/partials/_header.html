@@ -1,4 +1,14 @@
 {% load static %}
 <header>
-    <h2>This is a header</h2>
+    <nav>
+        <ul>
+            <li class="menu-option"><a href="{% url 'index' %}" class="link">home</a></li>
+            <li class="menu-option"><a href="{% url 'emprestimos' %}" class="link">empréstimos</a></li>
+            <li class="menu-option"><a href="{% url 'consorcios' %}" class="link">consórcios</a></li>
+            <li class="menu-option"><a href="{% url 'produtos' %}" class="link">produtos</a></li>
+            <li class="menu-option"><a href="{% url 'localizacao' %}" class="link">localização</a></li>
+            <li class="menu-option"><a href="{% url 'contato' %}" class="link">contato</a></li>
+        </ul>
+    </nav>
+</nav>
 </header>
