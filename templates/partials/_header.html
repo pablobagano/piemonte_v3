@@ -1,14 +1,14 @@
 {% load static %}
 <header>
-    <nav>
-        <ul>
-            <li class="menu-option"><a href="{% url 'index' %}" class="link">home</a></li>
-            <li class="menu-option"><a href="{% url 'emprestimos' %}" class="link">empréstimos</a></li>
-            <li class="menu-option"><a href="{% url 'consorcios' %}" class="link">consórcios</a></li>
-            <li class="menu-option"><a href="{% url 'produtos' %}" class="link">produtos</a></li>
-            <li class="menu-option"><a href="{% url 'localizacao' %}" class="link">localização</a></li>
-            <li class="menu-option"><a href="{% url 'contato' %}" class="link">contato</a></li>
-        </ul>
-    </nav>
-</nav>
+<div class="links">
+    <button onclick="dropdown()" class="dropbtn"><img src="{% static 'assets/menu.png' %}" alt="" id="menu-icon"></button>
+    <div id="meuMenu" class="conteudoMenu">
+        <a href="{% url 'index' %}" class="link">home</a>
+        <a href="{% url 'emprestimos' %}" class="link">empréstimos</a>
+        <a href="{% url 'consorcios' %}" class="link">consórcios</a>
+        <a href="{% url 'produtos' %}" class="link">produtos</a>
+        <a href="{% url 'localizacao' %}" class="link">localização</a>
+        <a href="{% url 'contato' %}" class="link">contato</a>
+    </div>
+</div>
 </header>
