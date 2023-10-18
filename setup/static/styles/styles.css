@@ -62,7 +62,24 @@ header {
 #logo-piemonte{
     width: 30%;
     margin-left: 150%;
-    
+}
+footer{
+    height: 25vh;
+    background-color: #013781;
+}
+.footer-info{
+    display: block;
+    padding-top: 2em;
+}
+.footer-info p{
+    color: antiquewhite;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+#logo-instagram{
+    width: 1.3em;
+    height: auto;
+    transform: translate(0, 0.3em)
 }
 h1{
     text-transform: uppercase;
