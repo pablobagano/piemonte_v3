@@ -1,3 +1,7 @@
+header {
+    display: flex;
+
+}
 .links{
     position: relative;
     display: inline-block;
@@ -12,24 +16,34 @@
     border: none;
     cursor: pointer;
   }
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover, .dropbtn:focus{
     background-color: #2980B9;
  }
 
 .conteudoMenu{
     display: none;
+    border-radius: 20%;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
+    min-width: 10rem;
     box-shadow: 0em 0.5em 1em 1em rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .conteudoMenu a {
-    color: black;
-    padding: 12px 16px;
+    color: #013781;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding: 0.75em 1em;
     text-decoration: none;
     display: block;
+}
+
+.conteudoMenu a:hover{
+    background-color: #184675;
+    color: antiquewhite;
 }
 
 .conteudoMenu a {background-color: #f1f1f1;}
@@ -38,6 +52,17 @@
 
 #menu-icon{
     width: 2em;
+    pointer-events: none;
+}
+.logo-div{
+    width: 50%;
+    padding: 1em;
+    align-self: flex-end;
+}
+#logo-piemonte{
+    width: 30%;
+    margin-left: 150%;
+    
 }
 h1{
     text-transform: uppercase;

@@ -1,25 +1,25 @@
 console.log("Script loaded") 
 
 const menuBt = document.querySelector(".dropbtn"); 
-console.log("Menu button: ", menuBt)
+console.log("Menu button: ", menuBt);
+const dropdowns = document.getElementsByClassName("conteudoMenu");
 
 menuBt.addEventListener('click', () => {
     console.log("Button working")
     dropdown()
-})
+});
+
 
 function dropdown() {
     console.log("Function properly triggered")
     document.getElementById('meuMenu').classList.toggle("show"); 
-}
+}; 
 
 // 
 window.onclick = function(event) { 
-    if (!event.target.matches('.dropbtn') && !document.getElementById('meuMenu').classList.contains('show')){
-        var dropdowns = document.getElementsByClassName("conteudoMenu");
-        var i; 
+    if (!event.target.matches('.dropbtn') && !event.target.closest('.conteudoMenu')){ 
         for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
+            let openDropdown = dropdowns[i];
             if (openDropdown.classList.contains('show')) {
                 openDropdown.classList.remove('show'); 
             }
