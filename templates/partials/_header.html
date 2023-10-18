@@ -1,7 +1,7 @@
 {% load static %}
 <header>
 <div class="links">
-    <button onclick="dropdown()" class="dropbtn"><img src="{% static 'assets/menu.png' %}" alt="" id="menu-icon"></button>
+    <button class="dropbtn" ><img src="{% static 'assets/menu.png' %}" alt="" id="menu-icon"></button>
     <div id="meuMenu" class="conteudoMenu">
         <a href="{% url 'index' %}" class="link">home</a>
         <a href="{% url 'emprestimos' %}" class="link">empréstimos</a>
