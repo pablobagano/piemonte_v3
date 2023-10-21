@@ -1,17 +1,33 @@
 {% load static %}
 <header>
-<div class="links">
-    <button class="dropbtn" ><img src="{% static 'assets/menu.png' %}" alt="" id="menu-icon"></button>
-    <div id="meuMenu" class="conteudoMenu">
-        <a href="{% url 'index' %}" class="link">home</a>
-        <a href="{% url 'emprestimos' %}" class="link">empréstimos</a>
-        <a href="{% url 'consorcios' %}" class="link">consórcios</a>
-        <a href="{% url 'produtos' %}" class="link">produtos</a>
-        <a href="{% url 'localizacao' %}" class="link">localização</a>
-        <a href="{% url 'contato' %}" class="link">contato</a>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'assets/logo-pc.png' %}" alt="" id="logo-piemonte"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'emprestimos' %}">Empréstimos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'consorcios' %}">Consórcios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'produtos' %}">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'localizacao' %}">Localização</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contato' %}">Contato</a>
+          </li>
+        </ul>
+      </div>
     </div>
-</div>
-<div class="logo-div">
-    <img src="{% static 'assets/logo.jpeg' %}" alt="" id="logo-piemonte">
-</div>
+  </nav>
 </header>
