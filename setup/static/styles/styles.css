@@ -1,4 +1,38 @@
-.nav-link{
-    font-size: 4vh;
-    color: #013781;
+a{
+    text-decoration: none;
 }
+.nav-link{
+    font-size: 2vw;
+    color: #013781;
+    margin-left: 1.2vw;
+}
+footer{
+    padding: 2em;
+    background-color: #013781;
+}
+footer p{
+    color: antiquewhite;
+    font-size: 1.5vw;
+    font-weight: 200;
+}
+.fixed-bottom{
+    transform: translate(90vw, 0);
+}
+#logo-zap-base{
+    width: 8vw;
+}
+#bg-div1-emprestimos{
+    background-image: url('bg-emprestimos.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* padding-left: 1rem; */
+    height: 100vh;
+}
+.tipo-emprestimo{
+    font-size: 7vh;
+    font-family: 'Inter', sans-serif;
+    color: #fde200;
+    margin-top: 4vh;
+    text-shadow: -0.1rem 0.2rem 0.1rem rgba(0,0,0,0.64);
+} 
+
