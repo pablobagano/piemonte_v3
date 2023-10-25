@@ -4,10 +4,65 @@
 <div class="container-fluid" id="bg-div1-emprestimos">
     <div class="row">
         <div class="col-6" style="margin-top: 20vh; margin-left: 10vh;">
-           <h5 class="tipo-emprestimo">Portabilidade INSS</h5>
-           <h5 class="tipo-emprestimo">Crédito Consignado</h5>
-           <h5 class="tipo-emprestimo">CDC - Crédito Direto ao Cliente</h5>
+           <h2 class="tipo-emprestimo">Crédito Consignado INSS</h2>
+           <h2 class="tipo-emprestimo">Crédito Consignado</h2>
+           <h2 class="tipo-emprestimo">Empréstimo Pessoal</h2>
         </div>
+    </div>
+</div>
+<div class="container-fluid" id="main-emprestimos">
+    <div class="row p-5 ">
+        <div class="col-6">
+            <h1 class="text-center m-1 mb-5" style="color: #013781;">Consignado INSS</h1>
+            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/inss-01.png' %}" alt="Agilidade" style="width: 3vw;" class="icon me-2"></span>Agilidade</h2>
+                <ul>
+                    <li class="descricao-emprestimo">Descontado direto na folha de pagamento</li>
+                    <li class="descricao-emprestimo">Não precisa de nome limpo</li>
+                    <li class="descricao-emprestimo">Crédito liberado na hora!</li>
+                </ul>
+            
+            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/inss-02.png' %}" alt="Prazos e Parcelas" style="width: 3vw;" class="icon me-1"></span>Prazos e Parcelas</h2>
+            <ul>
+                <li class="descricao-emprestimo">Parcelas mensais e fixas!</li>
+                <li class="descricao-emprestimo">Pague em até 84 meses</li>
+                <li class="descricao-emprestimo">Contratos renováveis</li>
+            </ul>
+        </div>
+        <div class="col-6">
+            <h1 h1 class="text-center m-1 mb-5" style="color: #013781;">Portabilidade INSS</h1>
+            <p class="fs-4 text">Você sabia que a Portabilidade de Empréstimo é um direto seu? Ou seja, você pode escolher trazer o seu empréstimo consignada para o Banco do Brasi
+                através da PiemonteCred e renegociar diretamente com os nosso agentes as taxas de juros e o valor das parcelas.
+            </p>
+            <p class="fs-4 text">Traga o seu empréstimos para a PiemonteCred com a certeza de que iremos trazer as melhores condicões possíveis para você.</p>
+        </div>
+    <div class="row">
+        <div class="col-6">
+            <h1 h1 class="text-center m-1 mb-5" style="color: #013781;">Crédito Consignado</h1>
+            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/consignado-01.png' %}" alt="Agilidade" style="width: 3.5vw; margin-right: 1em;" class="icon me-2"></span>Múltiplos Convênios</h2>
+            <ul>
+                <li class="descricao-emprestimo">Prefeituras</li>
+                <li class="descricao-emprestimo">Governo Estadual</li>
+                <li class="descricao-emprestimo">Governo Federal</li>
+            </ul>
+    
+        </div>
+        <div class="col-6">
+            <h1 h1 class="text-center m-1 mb-5" style="color: #013781;">Empréstimo Pessoal</h1>
+            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/pessoal-01.png' %}" alt="Agilidade" style="width: 3.5vw; margin-right: 1em;" class="icon me-2"></span>Escolha a sua modalidade</h2>
+            <ul>
+                <li class="descricao-emprestimo">Empréstimo Automático</li>
+                <li class="descricao-emprestimo">Crédito Salário</li>
+                <li class="descricao-emprestimo">Empréstimo com garantia</li>
+            </ul>
+            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/pessoal-02.png' %}" alt="Agilidade" style="width: 3.5vw; margin-right: 2em;" class="icon me-2"></span>Condições especiais</h2>
+            <ul>
+                <li class="descricao-emprestimo">Taxas de juros diferenciadas</li>
+                <li class="descricao-emprestimo">Até 60 dias para pagar a primeira parcela do Empréstimo Automático</li>
+                <li class="descricao-emprestimo">Até 80 dias para pagar a primeira parcela do Crédito Salário</li>
+            </ul>
+
+        </div>
+    </div>
     </div>
 </div>
 {% endblock content %}
