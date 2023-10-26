@@ -1,5 +1,23 @@
 {% extends "piemonte/base.html" %}
 {% load static %}
 {% block content %}
-  <h1>consórcios teste</h1>
+<div class="containter-fluid" style="background: #FFFFFF;
+background: -moz-linear-gradient(45deg, #FFFFFF 0%, #8B943B 59%, #FDE200 100%);
+background: -webkit-linear-gradient(45deg, #FFFFFF 0%, #8B943B 59%, #FDE200 100%);
+background: linear-gradient(45deg, #FFFFFF 0%, #8B943B 59%, #FDE200 100%);">
+  <div class="row ">
+    <div class="col-12 col-md-12 col-lg-6">
+      <h1 id="consorcio-h1">Consórcio BB</h1>
+      <p class="text-center fs-2 text me-4" style="color: #013781; font-family: 'Inter', sans-serif; text-shadow: -0.1rem 0rem 0.1rem rgba(0,0,0,0.5);">Você já deve ter ouvido falar de compra de imóveis e veículos através
+        de consórcio, mas você sabia que é possível muito mais?
+      </p>
+      <p class="text-center fs-2 text me-4" style="color: #013781; font-family: 'Inter', sans-serif; text-shadow: -0.1rem 0rem 0.1rem rgba(0,0,0,0.5);">Confira nossas modalidades!
+    </div>
+    <div class="col-12 col-md-12 col-lg-6">
+      <figure class="p-5">
+        <img src="{% static 'assets/consorcios/consorcios.png' %}" alt="Foto Consorcios"  id="consorcios-home">
+      </figure>
+    </div>
+  </div>
+</div>
 {% endblock content %}
