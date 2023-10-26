@@ -58,11 +58,13 @@ background: linear-gradient(135deg, #FFFFFF 0%, #E9EADA 70%, #FDE200 100%);
     text-shadow: -0.1rem 0.2rem 0.1rem rgba(0,0,0,0.64);
 }
 #consorcios-home{
-  width: 40vw;
+  width: 100%;
+  align-self: center;
 }
 @media (max-width: 991px){
     #consorcios-home{
-        width: 80vw; 
+        width: 80%;
+        margin-left: 10vw;  
     }
 };
 @media (min-width: 768px){

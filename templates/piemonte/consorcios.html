@@ -1,11 +1,11 @@
 {% extends "piemonte/base.html" %}
 {% load static %}
 {% block content %}
-<div class="containter-fluid" style="background: #FFFFFF;
+<div class="container-fluid" style="background: #FFFFFF;
 background: -moz-linear-gradient(45deg, #FFFFFF 0%, #8B943B 59%, #FDE200 100%);
 background: -webkit-linear-gradient(45deg, #FFFFFF 0%, #8B943B 59%, #FDE200 100%);
 background: linear-gradient(45deg, #FFFFFF 0%, #8B943B 59%, #FDE200 100%);">
-  <div class="row ">
+  <div class="row">
     <div class="col-12 col-md-12 col-lg-6">
       <h1 id="consorcio-h1">Consórcio BB</h1>
       <p class="text-center fs-2 text me-4" style="color: #013781; font-family: 'Inter', sans-serif; text-shadow: -0.1rem 0rem 0.1rem rgba(0,0,0,0.5);">Você já deve ter ouvido falar de compra de imóveis e veículos através
@@ -14,9 +14,59 @@ background: linear-gradient(45deg, #FFFFFF 0%, #8B943B 59%, #FDE200 100%);">
       <p class="text-center fs-2 text me-4" style="color: #013781; font-family: 'Inter', sans-serif; text-shadow: -0.1rem 0rem 0.1rem rgba(0,0,0,0.5);">Confira nossas modalidades!
     </div>
     <div class="col-12 col-md-12 col-lg-6">
-      <figure class="p-5">
         <img src="{% static 'assets/consorcios/consorcios.png' %}" alt="Foto Consorcios"  id="consorcios-home">
-      </figure>
+    </div>
+  </div>
+</div>
+<div class="cards-consorcio container-fluid p-5">
+  <div class="row">
+    <div class="col-12 col-md-12 col-lg-4 mb-5">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'assets/consorcios/veiculos.png' %}" class="card-img-top" alt="Veículos">
+        <div class="card-body">
+          <h5 class="card-title">Veículos</h5>
+          <p class="card-text">Adquira carros, motos, caminhões ou tratores, novos ou usados.</p>
+            <p class="card-text">Clique e fale com um de nossos consultores!</p> 
+              <p class="card-text">Disponível para Pessoas Físicas e Jurídicas.</p>
+          <a href="#" class="btn btn-primary">Quero meu carro novo!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-4 mb-5">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'assets/consorcios/imoveis.png' %}" class="card-img-top" alt="Imóveis">
+        <div class="card-body">
+          <h5 class="card-title">Imóveis</h5>
+          <p class="card-text">Uma maneira inteligente e planejada de realizar o sonho da sua vida.</p>
+          <p class="card-text">Conheça todas as opções</p>
+          <p class="card-text">Clique e fale com um de nossos consultores!</p>
+          <a href="#" class="btn btn-primary">Quero meu Imóvel!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-4">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'assets/consorcios/gamer.png' %}" class="card-img-top" alt="Gamer">
+        <div class="card-body">
+          <h5 class="card-title">Gamer</h5>
+          <p class="card-text">Que tal montar o setup dos sonhos?</p>
+          <p class="card-text">Sim, aqui na PiemonteCred tem um consórcio especial para você!</p>
+          <p class="card-text">Clique e fale com um de nossos consultores!</p>
+          <a href="#" class="btn btn-primary">Quero meu setup novo!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'assets/consorcios/agro.png' %}" class="card-img-top" alt="Gamer">
+        <div class="card-body">
+          <h5 class="card-title">Agro</h5>
+          <p class="card-text">Uma maneira simples e tranquila de realizar seus projetos no campo</p>
+          <p class="card-text">É possível adquirir, construir e reformar em imóveis rurais, além de realizar investimentos</p>
+          <p class="card-text">Clique e fale com um de nossos consultores!</p>
+          <a href="#" class="btn btn-primary">Quero investimento agro!</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
