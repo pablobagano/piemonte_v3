@@ -16,7 +16,7 @@ def produtos(request):
 
 def localizacao(request):
     context = {"mapa":piemonte_map, "bahia": bahia, "sergipe":sergipe}
-    return render(request, 'piemonte/localizacao.html', context)
+    return render(request, 'piemonte/localizacao.html', context=context)
 
 def contato(request):
     return render(request, 'piemonte/contato.html')

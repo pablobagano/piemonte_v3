@@ -1,7 +1,29 @@
 {% extends "piemonte/base.html" %}
 {% load static %}
 {% block content %}
-<div class="container-fluid">
-  {{mapa | safe}}
+<div class="consorcios-main container-fluid">
+  <div class="localizcao-main row">
+    <div class="mapa col-12 col-md-12 col-lg-6 mt-5 mb-5" style="box-sizing: border-box;">
+      {{mapa | safe}}
+    </div>
+    <div class="col-12 col-md-6 col-lg-6p p-5" style="box-sizing: border-box;">
+      <h1>Bahia</h1>
+      <div class="lista-cidades p-2 pt-5 mb-5">
+        {% for cidade in bahia %}
+        <ul>
+          <li class="fs-3 text" style="color: #013781;">{{cidade}}</li>
+        </ul>
+        {% endfor %}
+      </div>
+      <h1 class=>Sergipe</h1>
+      <div class="lista-cidades pt-5 mb-5">
+        {% for cidade in sergipe %}
+        <ul>
+          <li class="fs-3 text" style="color: #013781;"">{{cidade}}</li>
+        </ul>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock content %}

@@ -28,7 +28,8 @@ dic = {'Camaçari': [-12.6964, -38.3234],
 'São José da Laje': [-9.01187,-36.0535],
 'Jacobina': [-11.1855,-40.5361]}
 
-piemonte_map = folium.Map(location=[-11.1855,-40.5361], zoom_start=6.5) # the variable name is Portuguese for 'map'
+piemonte_map = folium.Map(location=[-11.1855,-40.5361], zoom_start=6, dragging=False, touchZoom=False, scrollWheelZoom=False, 
+               doubleClickZoom=False, boxZoom=False) # the variable name is Portuguese for 'map'
 cities = folium.FeatureGroup()
 for city, coord in dic.items():
     cities.add_child(
