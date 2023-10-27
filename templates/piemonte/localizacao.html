@@ -1,5 +1,7 @@
 {% extends "piemonte/base.html" %}
 {% load static %}
 {% block content %}
-  <h1>localização teste</h1>
+<div class="container-fluid">
+  {{mapa | safe}}
+</div>
 {% endblock content %}

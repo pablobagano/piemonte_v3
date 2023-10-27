@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from map import * 
 
 # Create your views here.
 def index(request):
@@ -14,7 +15,8 @@ def produtos(request):
     return render(request, 'piemonte/produtos.html')
 
 def localizacao(request):
-    return render(request, 'piemonte/localizacao.html')
+    context = {"mapa":piemonte_map, "bahia": bahia, "sergipe":sergipe}
+    return render(request, 'piemonte/localizacao.html', context)
 
 def contato(request):
     return render(request, 'piemonte/contato.html')
