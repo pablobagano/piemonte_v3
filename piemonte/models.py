@@ -1,5 +1,5 @@
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField 
+from phonenumber_field.modelfields import PhoneNumberField
 from map import bahia, sergipe 
 from datetime import datetime 
 
