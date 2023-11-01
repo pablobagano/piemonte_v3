@@ -5,7 +5,7 @@ class LeadForm(forms.ModelForm):
     class Meta:
         model = Lead
         fields = ('nome', 'email', 'operacao', 'cidade', 'telefone')
-        labels = {'operacao':'operação'}
+        labels = {'operacao':'Operação'}
 
     def __init__(self, *args, **kwargs):
         super(LeadForm, self).__init__(*args, **kwargs)

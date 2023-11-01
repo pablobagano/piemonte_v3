@@ -1,16 +1,24 @@
 {% extends "piemonte/base.html" %}
 {% load static %}
+{% load widget_tweaks %}
 {% block content %}
 <div class="contato container-fluid">
-<div class="contato-texto container-fluid">
-  <h1 class="text-center text-uppercase">fale conosco</h1>
-  <p class="text-center text-uppercase fs-4 text">preencha o formulário abaixo para ter atendimento personalizado com nossos consultores.</p>
+<div class="contato-texto container-fluid p-5">
+  <h1 class="text-center text-uppercase" style="color: #013781;">fale conosco</h1>
+  <p class="text-center text-uppercase fs-4 text" style="color: #013781;">preencha o formulário abaixo para ter atendimento personalizado com nossos consultores.</p>
+  {% include 'partials/_alertas.html' %}
 </div>
-<div class="container" style="background-color: aqua;">
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor doloremque eum hic voluptas qui perspiciatis minima voluptatum officia fugiat ex, 
-    veritatis ullam optio illo nostrum necessitatibus officiis earum sapiente non?</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis nemo omnis similique fugit sunt repellat 
-      nihil obcaecati eius hic consectetur quos aliquid quas vero labore voluptatum vitae, doloribus, porro veniam?</p>
+<div class="form container p-5">
+  <form action="" method="POST" >
+    {% csrf_token %}
+    {% for field in form.visible_fields %}
+    <div class="mb-3">
+      <label for="{{field.id_label}}" class="form-label fs-4 text">{{field.label}}</label>
+      {{field|add_class:"form-control mt-3 mb-3"}}
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-outline-primary mt-3 btn-lg">Enviar</button>
+  </form>
 </div>
 </div>
 {% endblock content %}

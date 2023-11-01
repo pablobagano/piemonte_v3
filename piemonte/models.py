@@ -1,7 +1,6 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from map import bahia, sergipe 
-from datetime import datetime 
 
 class Lead(models.Model):
     ops = [('emprestimo', 'Empréstimo'),('consorcio', 'Consórcio'),('conta', 'Conta Corrente'),('outros', 'Outros')]
@@ -15,6 +14,7 @@ class Lead(models.Model):
 
     def __str__(self):
         return self.nome
+
 
 
     

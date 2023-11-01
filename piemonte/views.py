@@ -1,5 +1,7 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from map import * 
+from .forms import LeadForm
 
 # Create your views here.
 def index(request):
@@ -19,4 +21,16 @@ def localizacao(request):
     return render(request, 'piemonte/localizacao.html', context=context)
 
 def contato(request):
-    return render(request, 'piemonte/contato.html')
+    form = LeadForm()
+    if request.method == 'POST':
+        form = LeadForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('obrigado')
+        else:
+            messages.error('Verifique as informações e tente novamente')
+            form = LeadForm()
+    return render(request, 'piemonte/contato.html', {'form':form})
+
+def obrigado(request):
+    return render(request, 'piemonte/obrigado.html')
