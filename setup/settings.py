@@ -14,6 +14,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import pymysql
 import os
+from django.contrib.messages import constants as messages
 from django.db import DatabaseError, connections
 from azure.identity import DefaultAzureCredential
 from azure.storage.blob import BlobClient
@@ -38,7 +39,7 @@ else:
     DEBUG = True
     print(f"DEBUG: {DEBUG}")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = str(os.getenv('DJANGO_ALLOWED_HOSTS')).split(',') 
 
 
 # Application definition
@@ -133,7 +134,7 @@ DATABASES = {
 }
 try:
     connections['default'].ensure_connection()
-    print("All good")
+    print("Login to database successful")
 except DatabaseError as db_err:
     print(f"DatabaseError: {db_err}")
 except Exception as e:
@@ -173,7 +174,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/static/'
+AZURE_ACCOUNT_NAME = str(os.getenv('AZURE_ACCOUNT_NAME'))
+AZURE_ACCOUNT_KEY = str(os.getenv('AZURE_ACCOUNT_KEY'))
+AZURE_CONTAINER = str(os.getenv('AZURE_CONTAINER'))
+
+STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+
+AZURE_DOMAIN = f"{AZURE_ACCOUNT_NAME}.blob.core.windows.net"
+STATIC_URL = f"https://{AZURE_DOMAIN}/{AZURE_CONTAINER}/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'setup/static')
@@ -187,3 +195,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Messages 
+MESSAGES_TAGS = {
+    messages.ERROR : 'fail',
+    messages.SUCCESS : 'success'
+}
