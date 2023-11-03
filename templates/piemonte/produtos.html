@@ -1,5 +1,21 @@
 {% extends "piemonte/base.html" %}
 {% load static %}
 {% block content %}
-  <h1>PRODUTOS TESTE</h1>
+<div class="container-fluid p-5">
+  <h1 class="text-lg-start text-md-start text-sm-center mb-5" style="color: #013781;">PRODUTOS BB</h1>
+  <p class="fs-3 text" style="color: #013781;">Além das diversas modalidades de empréstimos e consórcios, a PiemonteCred também 
+  traz a você outros produtos do portifólio Banco do Brasil.</p>
+  <p class="fs-3 text" style="color: #013781;">Além da certeza de ter como seu parceiro um dos maiores bancos da América Latina, 
+  ter outros produtos BB fortalece seu relacionamento com o banco e ajuda nas suas análises de crédito.</p>
+  <div class="container-fluid pt-5 pb-5">
+    <button type="button" produto="capitalizacao" class="brasilcap btn-produtos btn btn-outline-primary btn-lg me-5">BrasilCap</button> 
+    <button type="button" produto="conta" class="conta btn-produtos btn btn-outline-primary btn-lg me-5">Conta Corrente</button>
+    <div class="info-produto container-fluid mt-5 mb-5" produto="capitalizacao">
+      <h2 class="produto-titulo mb-3" style="color: #013781;">Produtos e Serviços - Clique acima</h2>
+      <p class="descricao-produto fs-4 text" style="color: #013781; margin: 0;">Para saber mais sobre os produtos BB, clique na opção desejada</p>
+      <h2 class="documentos-titulo mt-3 mb-3" style="color: #013781;">Documentação</h2>
+      <p class="documentos-produto fs-4 text" style="color: #013781;">Documentos do BrasilCap</p>
+    </div>
+  </div>
+</div>
 {% endblock content %}
