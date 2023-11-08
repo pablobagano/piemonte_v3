@@ -12,7 +12,7 @@ footer{
 }
 footer p{
     color: antiquewhite;
-    font-size: 1.5vw;
+    /* font-size: 1rem; */
     font-weight: 200;
 }
 .fixed-bottom{
@@ -79,4 +79,8 @@ background: linear-gradient(135deg, #FFFFFF 0%, #E9EADA 70%, #FDE200 100%);
 }
 .map{
     box-sizing: border-box;
+}
+.titulo-emprestimo{
+    font-size: 5vw;
+    color: #013781;
 }

@@ -1,5 +1,13 @@
 {% extends "piemonte/base.html" %}
 {% load static %}
 {% block content %}
-<h1>Obrigado</h1>
+<div class="container-fluid">
+    <div class="container pt-5 mb-5">
+        <h1 class="titulo-emprestimo text-center text-uppercase">OBRIGADO PELA CONFIANÇA</h1>
+        <p class="text-center fs-2 text" style="color: #013781;">Em breve, um de nossos consultores entrará em contato para atendimento personalizado.</p>
+    </div>
+    <div class="container p-5">
+        <img src="{% static 'assets/obrigado.png' %}" class="img-fluid" alt="">
+    </div>
+</div>
 {% endblock content %}
