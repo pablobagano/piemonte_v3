@@ -1,27 +1,39 @@
 {% extends "piemonte/base.html" %}
 {% load static %}
 {% block content %}
-<div class="container-fluid" id="bg-div1-emprestimos">
-    <div class="row">
-        <div class="col-6" style="margin-top: 20vh; margin-left: 10vh;">
-           <h1 class="tipo-emprestimo">Crédito Consignado INSS</h1>
-           <h1 class="tipo-emprestimo">Crédito Consignado</h1>
-           <h1 class="tipo-emprestimo">Empréstimo Pessoal</h1>
-        </div>
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'assets/emprestimos/slide-01.png' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'assets/emprestimos/slide-02.png' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'assets/emprestimos/slide-03.png' %}" class="d-block w-100" alt="...">
+      </div>
     </div>
-</div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 <div class="container-fluid" id="main-emprestimos">
     <div class="row p-5 ">
         <div class="col-12 col-sm-12 col-md-6">
             <h1 class="text-center m-1 mb-5" style="color: #013781;">Consignado INSS</h1>
-            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/inss-01.png' %}" alt="Agilidade" style="width: 3vw;" class="icon me-2"></span>Agilidade</h2>
+            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/inss-01.png' %}" alt="Agilidade" style="width: 3vw;" class="d-none d-md-inline-block icon me-2"></span>Agilidade</h2>
                 <ul>
                     <li class="descricao-produto">Descontado direto na folha de pagamento</li>
                     <li class="descricao-produto">Não precisa de nome limpo</li>
                     <li class="descricao-produto">Crédito liberado na hora!</li>
                 </ul>
             
-            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/inss-02.png' %}" alt="Prazos e Parcelas" style="width: 3vw;" class="icon me-1"></span>Prazos e Parcelas</h2>
+            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/inss-02.png' %}" alt="Prazos e Parcelas" style="width: 3vw;" class="d-none d-md-inline-block icon me-1"></span>Prazos e Parcelas</h2>
             <ul>
                 <li class="descricao-produto">Parcelas mensais e fixas!</li>
                 <li class="descricao-produto">Pague em até 84 meses</li>
@@ -38,7 +50,7 @@
     <div class="row">
         <div class="col-12 col-sm-12 col-md-6">
             <h1 h1 class="text-center m-1 mb-5" style="color: #013781;">Crédito Consignado</h1>
-            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/consignado-01.png' %}" alt="Agilidade" style="width: 3.5vw; margin-right: 1em;" class="icon me-2"></span>Múltiplos Convênios</h2>
+            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/consignado-01.png' %}" alt="Agilidade" style="width: 3.5vw; margin-right: 1em;" class="d-none d-md-inline-block icon me-2"></span>Múltiplos Convênios</h2>
             <ul>
                 <li class="descricao-produto">Prefeituras</li>
                 <li class="descricao-produto">Governo Estadual</li>
@@ -48,13 +60,13 @@
         </div>
         <div class="col-12 col-sm-12 col-md-6">
             <h1 h1 class="text-center m-1 mb-5" style="color: #013781;">Empréstimo Pessoal</h1>
-            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/pessoal-01.png' %}" alt="Agilidade" style="width: 3.5vw; margin-right: 1em;" class="icon me-2"></span>Escolha a sua modalidade</h2>
+            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/pessoal-01.png' %}" alt="Agilidade" style="width: 3.5vw; margin-right: 1em;" class="d-none d-md-inline-block icon me-2"></span>Escolha a sua modalidade</h2>
             <ul>
                 <li class="descricao-produto">Empréstimo Automático</li>
                 <li class="descricao-produto">Crédito Salário</li>
                 <li class="descricao-produto">Empréstimo com garantia</li>
             </ul>
-            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/pessoal-02.png' %}" alt="Agilidade" style="width: 3.5vw; margin-right: 2em;" class="icon me-2 "></span>Condições especiais</h2>
+            <h2 class="topico-emprestimo"><span><img src="{% static 'assets/emprestimos/pessoal-02.png' %}" alt="Agilidade" style="width: 3.5vw; margin-right: 2em;" class="d-none d-md-inline-block icon me-2 "></span>Condições especiais</h2>
             <ul>
                 <li class="descricao-produto">Taxas de juros diferenciadas</li>
                 <li class="descricao-produto">Até 60 dias para pagar a primeira parcela do Empréstimo Automático</li>

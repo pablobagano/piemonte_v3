@@ -14,9 +14,7 @@ def consorcios(request):
     return render(request, 'piemonte/consorcios.html')
 
 def produtos(request):
-    doc_cap = "CPF, Conta Corrente BB".strip().split(',')
-    doc_conta = "Idade entre 18 e 60 anos, CPF, Número de telefone com DDD".strip().split(',')
-    return render(request, 'piemonte/produtos.html', context ={"docCap": doc_cap, "docConta": doc_conta})
+    return render(request, 'piemonte/produtos.html')
 
 def localizacao(request):
     context = {"mapa":piemonte_map, "bahia": bahia, "sergipe":sergipe}
@@ -30,7 +28,7 @@ def contato(request):
             form.save()
             return redirect('obrigado')
         else:
-            messages.error('Verifique as informações e tente novamente')
+            messages.error(request, 'Verifique as informações e tente novamente')
             form = LeadForm()
     return render(request, 'piemonte/contato.html', {'form':form})
 

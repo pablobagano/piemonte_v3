@@ -21,26 +21,14 @@ footer p{
 #logo-zap-base{
     width: 8vw;
 }
-#bg-div1-emprestimos{
-    background-image: url('bg-emprestimos.png');
-    background-size: cover; 
-    background-repeat: no-repeat;
-    /* padding-left: 1rem; */
-    height: 100vh;
-}
+
 #main-emprestimos{
     background: #FFFFFF;
 background: -moz-linear-gradient(-45deg, #FFFFFF 0%, #E9EADA 70%, #FDE200 100%);
 background: -webkit-linear-gradient(-45deg, #FFFFFF 0%, #E9EADA 70%, #FDE200 100%);
 background: linear-gradient(135deg, #FFFFFF 0%, #E9EADA 70%, #FDE200 100%);
 }
-.tipo-emprestimo{
-    font-size: 7vh;
-    font-family: 'Inter', sans-serif;
-    color: #fde200;
-    margin-top: 4vh;
-    text-shadow: -0.1rem 0.2rem 0.1rem rgba(0,0,0,0.64);
-} 
+
 .topico-emprestimo{
     color: #184675; 
 }
