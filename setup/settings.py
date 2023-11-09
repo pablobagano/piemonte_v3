@@ -41,8 +41,17 @@ else:
 
 ALLOWED_HOSTS = str(os.getenv('DJANGO_ALLOWED_HOSTS')).split(',')
 
-CORS_ALLOWED_ORIGINS = ['https://sitepiemonte.azurewebsites.net','https://piemontecred.com.br', 'https://www.piemontecred.com.br']
+#CORS_ALLOWED_ORIGINS = ['https://sitepiemonte.azurewebsites.net','https://piemontecred.com.br', 'https://www.piemontecred.com.br']
+CORS_ALLOWED_ORIGINS = str(os.getenv('CORS_ORIGINS')).split(',')
 
+# Security Settingsc
+SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT','False') == 'True'
+SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE','False') == 'True'
+if os.getenv('USE_SECURE_PROXY_SSL_HEADER', 'False') == 'True':
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
+CSRF_COOKIE_SECURE = os.getenv('CSRF_COOKIE_SECURE','False') == 'True'
+_csrf_trusted_origins = os.getenv('CSRF_TRUSTED_ORIGINS','')
+CSRF_TRUSTED_ORIGINS = _csrf_trusted_origins.split(',') if _csrf_trusted_origins else []
 
 
 # Application definition
