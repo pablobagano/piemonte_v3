@@ -39,7 +39,10 @@ else:
     DEBUG = True
     print(f"DEBUG: {DEBUG}")
 
-ALLOWED_HOSTS = str(os.getenv('DJANGO_ALLOWED_HOSTS')).split(',') 
+ALLOWED_HOSTS = str(os.getenv('DJANGO_ALLOWED_HOSTS')).split(',')
+
+CORS_ALLOWED_ORIGINS = ['https://sitepiemonte.azurewebsites.net','https://piemontecred.com.br', 'https://www.piemontecred.com.br']
+
 
 
 # Application definition

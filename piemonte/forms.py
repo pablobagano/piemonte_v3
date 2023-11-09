@@ -5,11 +5,14 @@ class LeadForm(forms.ModelForm):
     class Meta:
         model = Lead
         fields = ('nome', 'email', 'operacao', 'cidade', 'telefone')
-        labels = {'operacao':'Operação'}
+        labels = {
+            'nome':'Nome Completo',
+            'email': 'E-mail',
+            'operacao':'Operação'}
 
     def __init__(self, *args, **kwargs):
         super(LeadForm, self).__init__(*args, **kwargs)
-        self.fields['nome'].widget.attrs.update({'placeholder':'Insira seu nome'})
+        self.fields['nome'].widget.attrs.update({'placeholder':'Insira nome e sobrenome'})
         self.fields['email'].widget.attrs.update({'placeholder':'Insira seu e-mail'})
         self.fields['operacao'].widget.attrs.update({'placeholder':'O que deseja?'})
         self.fields['cidade'].widget.attrs.update({'placeholder':'Qual a sua cidade?'})
