@@ -41,7 +41,6 @@ else:
 
 ALLOWED_HOSTS = str(os.getenv('DJANGO_ALLOWED_HOSTS')).split(',')
 
-#CORS_ALLOWED_ORIGINS = ['https://sitepiemonte.azurewebsites.net','https://piemontecred.com.br', 'https://www.piemontecred.com.br']
 CORS_ALLOWED_ORIGINS = str(os.getenv('CORS_ORIGINS')).split(',')
 
 # Security Settingsc
