@@ -1,0 +1,74 @@
+a{
+    text-decoration: none;
+}
+.nav-link{
+    font-size: 2vw;
+    color: #013781;
+    margin-left: 1.2vw;
+}
+footer{
+    padding: 2em;
+    background-color: #013781;
+}
+footer p{
+    color: antiquewhite;
+    /* font-size: 1rem; */
+    font-weight: 200;
+}
+.fixed-bottom{
+    transform: translate(90vw, 0);
+}
+#logo-zap-base{
+    width: 8vw;
+}
+
+#main-emprestimos{
+    background: #FFFFFF;
+background: -moz-linear-gradient(-45deg, #FFFFFF 0%, #E9EADA 70%, #FDE200 100%);
+background: -webkit-linear-gradient(-45deg, #FFFFFF 0%, #E9EADA 70%, #FDE200 100%);
+background: linear-gradient(135deg, #FFFFFF 0%, #E9EADA 70%, #FDE200 100%);
+}
+
+.topico-emprestimo{
+    color: #184675; 
+}
+.descricao-produto{
+    font-family: 'Inter', sans-serif;
+    margin: 1em;
+    font-size: x-large;
+}
+#consorcio-h1{
+    text-align: center;
+    font-size: 10vh;
+    font-family: 'Inter', sans-serif;
+    color: #fde200;
+    margin-top: 30vh;
+    text-shadow: -0.1rem 0.2rem 0.1rem rgba(0,0,0,0.64);
+}
+#consorcios-home{
+  width: 100%;
+  align-self: center;
+}
+@media (max-width: 991px){
+    #consorcios-home{
+        width: 80%;
+        margin-left: 10vw;  
+    }
+};
+@media (min-width: 768px){
+    .icon{
+        width: 10vw;
+    }
+}
+.lista-cidades{
+    box-sizing: border-box;
+    column-count: 3;
+    column-width: 30%;
+}
+.map{
+    box-sizing: border-box;
+}
+.titulo-emprestimo{
+    font-size: 5vw;
+    color: #013781;
+}
